@@ -1,4 +1,5 @@
-const BASE_URL = 'https://musicfun.it-incubator.app/api/1.0'
+const API_KEY = import.meta.env.VITE_API_KEY
+const BASE_URL = import.meta.env.BASE_URL
 
 type TrackDetailsAttributes = {
   title: string;
@@ -15,8 +16,7 @@ type GetTrackDetailsOutput = {
 }  // Gen
 
 const prepareHeaders = () => {
-  const apiKey = import.meta.env.VITE_API_KEY
-  if (!apiKey) return undefined
+  if (!API_KEY) return undefined
 
   return {
     "api-key": import.meta.env.VITE_API_KEY
